@@ -24,7 +24,6 @@ var watchreload = {
         var scriptElems = document.getElementsByTagName('script');
         for (var i = 0, len = scriptElems.length; i < len; i++) {
             var elem = scriptElems[i];
-            console.log('check srcipt:' + elem.src);
             if (elem.src === scriptUrl) {
                 return elem;
             }
