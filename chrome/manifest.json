@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+
+    "name": "watchreload",
+    "description": "watch web asset change and reload page",
+    "version": "1.0",
+
+    "icons": {
+        "16": "img/icon16.png",
+        "48": "img/icon48.png",
+        "128": "img/icon128.png"
+    },
+    "permissions": [
+        "tabs",
+        "storage",
+        "<all_urls>"
+    ],
+    "browser_action": {
+        "default_icon": {
+            "19": "img/icon19_disabled.png",
+            "38": "img/icon38.png"
+        },
+        "default_title": "Enable watchreload"
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "options_page": "options/options.html",
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["contentscript.js"]
+        }
+    ]
+}
